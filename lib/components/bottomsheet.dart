@@ -19,9 +19,9 @@ Future<void> Bottomsheet(BuildContext context,int index) async {
               width: 420,
               child: Column(
                 children: [
-                  SizedBox(height: 20,),
+                  const SizedBox(height: 20,),
                   Text("${state.tasks[index].taskname.toString()}",style: TextStyle(color: Colors.white,fontSize: 70),),
-                  SizedBox(height: 15),
+                  const SizedBox(height: 15),
                   Text("${state.tasks[index].taskdesc.toString()}",style: TextStyle(color: Colors.white,fontSize: 30)),
                 ],
               ),
