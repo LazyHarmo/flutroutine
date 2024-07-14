@@ -1,82 +1,48 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:equatable/equatable.dart';
-
-// ignore: must_be_immutable
-class Task extends Equatable {
-  final String id;
+class Task {
   final String title;
-  final String description;
-  final String date;
-  bool? isDone;
-  bool? isDeleted;
-  bool? isFavorite;
+  final String subtitle;
+  bool isDone;
 
   Task({
-    required this.id,
-    required this.title,
-    required this.description,
-    required this.date,
-    this.isDone,
-    this.isDeleted,
-    this.isFavorite,
+    this.title='',
+    this.subtitle='',
+    this.isDone = false
+  });
+
+  Task copyWith({
+    String? title,
+    String? subtitle,
+    bool? isDone,
   }) {
-    isDone = isDone ?? false;
-    isDeleted = isDeleted ?? false;
-    isFavorite = isFavorite ?? false;
+    return Task(
+      title: title ?? this.title,
+      subtitle: subtitle ?? this.subtitle,
+      isDone: isDone ?? this.isDone,
+    );
   }
 
-  @override
-  List<Object?> get props => [
-        id,
-        title,
-        date,
-        description,
-        isDeleted,
-        isDone,
-        isFavorite,
-      ];
+  factory Task.fromJson(Map<String, dynamic> json) {
+    return Task(
+      title: json['title'],
+      subtitle: json['subtitle'],
+      isDone: json['isDone']
+    );
+  }
 
-  Map<String, dynamic> toMap() {
-    return <String, dynamic>{
-      'id': id,
+  Map<String, dynamic> tojson() {
+    return {
       'title': title,
-      'description': description,
-      'date': date,
+      'subtitle': subtitle,
       'isDone': isDone,
-      'isDeleted': isDeleted,
-      'isFavorite': isFavorite,
     };
   }
 
-  Task copyWith({
-    String? id,
-    String? title,
-    String? description,
-    String? date,
-    bool? isDone,
-    bool? isDeleted,
-    bool? isFavorite,
-  }) {
-    return Task(
-      id: id ?? this.id,
-      title: title ?? this.title,
-      description: description ?? this.description,
-      date: date ?? this.date,
-      isDone: isDone ?? this.isDone,
-      isDeleted: isDeleted ?? this.isDeleted,
-      isFavorite: isFavorite ?? this.isFavorite,
-    );
-  }
-
-  factory Task.fromMap(Map<String, dynamic> map) {
-    return Task(
-      id: map['id'] as String,
-      title: map['title'] as String,
-      description: map['description'] as String,
-      date: map['date'] as String,
-      isDone: map['isDone'] != null ? map['isDone'] as bool : null,
-      isDeleted: map['isDeleted'] != null ? map['isDeleted'] as bool : null,
-      isFavorite: map['isFavorite'] != null ? map['isFavorite'] as bool : null,
-    );
+  @override
+  String toString() {
+    return '''Task: {
+    title: $title\n
+    subtitle: $subtitle\n
+    isDone: $isDone
+    }''';
   }
 }
