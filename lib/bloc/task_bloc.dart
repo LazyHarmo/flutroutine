@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:meta/meta.dart';
-import '../models/task.dart';
+import '../data/task.dart';
 
 part 'task_event.dart';
 part 'task_state.dart';

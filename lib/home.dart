@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'bloc/task_bloc.dart';
-import 'models/task.dart';
+import 'data/task.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -170,7 +170,7 @@ class _HomeScreenState extends State<HomeScreen> {
 														onPressed: (_) {
 															removeTask(state.tasks[i]);
 														},
-														backgroundColor: const Color(0xFFFE4A49),
+														backgroundColor: const Color.fromARGB(255, 133, 0, 0),
 														foregroundColor: Colors.white,
 														icon: Icons.delete,
 														label: 'Delete',
