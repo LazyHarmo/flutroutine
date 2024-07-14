@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutroutine/home.dart';
-import 'package:flutroutine/bloc_observer.dart';
+import 'package:flutroutine/simple_bloc_observer.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:path_provider/path_provider.dart';
 import 'bloc/task_bloc.dart';
