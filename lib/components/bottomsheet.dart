@@ -9,18 +9,18 @@ Future<void> Bottomsheet(BuildContext context,int index) async {
     builder: (BuildContext context) {
       return ClipRRect(
         // Wrap the content with ClipRRect
-        borderRadius: BorderRadius.vertical(top: Radius.circular(20.0)),
+        borderRadius: const BorderRadius.vertical(top: Radius.circular(30.0)),
         child: BlocBuilder<TaskBloc, TaskState>(
           builder: (context, state) {
             
             return Container(
-              color: Color.fromARGB(255, 88, 22, 219),
+              color: const Color.fromARGB(255, 143, 177, 252),
               height: 250,
               width: 420,
               child: Column(
                 children: [
-                  SizedBox(height: 30,),
-                  Text("${state.tasks[index].taskname.toString()}",style: TextStyle(color: Colors.white,fontSize: 40),),
+                  SizedBox(height: 20,),
+                  Text("${state.tasks[index].taskname.toString()}",style: TextStyle(color: Colors.white,fontSize: 70),),
                   SizedBox(height: 15),
                   Text("${state.tasks[index].taskdesc.toString()}",style: TextStyle(color: Colors.white,fontSize: 30)),
                 ],

@@ -11,7 +11,7 @@ Future<void> DialogBox(BuildContext context)async{
     
     return AlertDialog(
       
-      title: Text("Your Todo"),
+      title: Text("New Task"),
       content:SingleChildScrollView(
        child:Column(
         children: [
@@ -21,7 +21,7 @@ Future<void> DialogBox(BuildContext context)async{
               controller: _taskname,
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
-                hintText: "enter task name",
+                hintText: "task name",
                 fillColor: Colors.grey,
               ),
             ),
@@ -38,13 +38,13 @@ Future<void> DialogBox(BuildContext context)async{
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
                 hintMaxLines: 45,
-                hintText: "enter task desc",
+                hintText: "task desc",
                 
                 
               ),
             ),
           ),
-          SizedBox(height: 30,),
+          const SizedBox(height: 30,),
           ElevatedButton(onPressed: (){
             late final String taskname;
             late final String taskdesc;

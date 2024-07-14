@@ -17,20 +17,20 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          "TODO",
-          style: TextStyle(fontSize: 30,color: Colors.white),
+        title: const Text(
+          "Routine",
+          style: TextStyle(fontSize: 40,color: Colors.white),
         ),
         centerTitle: true,
         elevation: 40,
-        backgroundColor: Color.fromARGB(255, 114, 20, 255),
+        backgroundColor: const Color.fromARGB(255, 91, 156, 255),
       ),
       body:BlocBuilder<TaskBloc, TaskState>(
         builder: (context, state) {
 
           if(state.tasks.isEmpty){
             return Center(
-              child: Lottie.asset('assets/Animation - 1712305102953.json'),
+              child: Lottie.asset('assets/Animation - 1720993673195.json'),
           );
         }
           else{
